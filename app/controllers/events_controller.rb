@@ -17,4 +17,17 @@ class EventsController < ApplicationController
       render :index, status: :unprocessable_entity
     end
   end
+
+  def heatmap_data
+    counts = Event.group(:date).count
+    render json: counts.sort.map { |date, value| { date: date.to_s, value: value } }
+  end
+
+  private
+
+  def event_params
+    params.require(:event).permit(:date, :time, :comment)
+  end
+
+
 end
