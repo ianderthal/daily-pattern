@@ -28,6 +28,4 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:date, :time, :comment)
   end
-
-
 end

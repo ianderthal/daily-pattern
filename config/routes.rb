@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   root "events#index"
 
-  resources :events, only: [:new, :create] do
+  resources :events, only: [ :new, :create ] do
     collection { get :heatmap_data }
   end
 end
