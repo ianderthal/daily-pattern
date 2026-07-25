@@ -1,0 +1,14 @@
+<div id="cal-heatmap"
+  data-controller="heatmap"
+  data-heatmap-url-value="<%= heatmap_data_events_path %>">
+</div>
+
+<%= render "form", event: @event %>
+
+<h2>Recent Entries</h2>
+
+<ul>
+  <% @recent_events.each do |event| %>
+    <li><%= event.date %> <%= event.time.strftime("%H:%M") %> - <%= event.comment %></li>
+  <% end %>
+</ul>

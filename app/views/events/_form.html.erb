@@ -1,0 +1,12 @@
+<%= form_with model: @event do |f| %>
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+
+  <%= f.label :time %>
+  <%= f.time_field :time %>
+
+  <%= f.label :comment %>
+  <%= f.text_area :comment %>
+
+  <%= f.submit %>
+<% end %>
