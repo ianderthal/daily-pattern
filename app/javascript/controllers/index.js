@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import HeatmapController from "./heatmap_controller"
+application.register("heatmap", HeatmapController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
