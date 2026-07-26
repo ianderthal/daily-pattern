@@ -15,6 +15,13 @@ export default class extends Controller {
         domain: { type: "month", gutter: 4 },
         subDomain: { type: "day", radius: 2, width: 11, height: 11 },
         data: { source: this.urlValue, type: "json", x: "date", y: "value" },
+        scale: {
+          color: {
+            scheme: "Reds",
+            type: "linear",
+            domain: [0, 4],
+          },
+        },
       },
       [
         [Tooltip, { text: (_date, value) => `${value || 0} event(s)` }],
