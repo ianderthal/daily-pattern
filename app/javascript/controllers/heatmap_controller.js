@@ -7,11 +7,15 @@ export default class extends Controller {
   static values = { url: String }
 
   connect() {
+    const today = new Date()
+    const start = new Date(today.getFullYear(), today.getMonth() - 11, 1)
+
     this.heatmap = new CalHeatmap()
     this.heatmap.paint(
       {
         itemSelector: this.element,
         range: 12,
+        date: { start },
         domain: { type: "month", gutter: 4 },
         subDomain: { type: "day", radius: 2, width: 11, height: 11 },
         data: { source: this.urlValue, type: "json", x: "date", y: "value" },
