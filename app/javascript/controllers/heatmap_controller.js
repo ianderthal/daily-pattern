@@ -16,8 +16,8 @@ export default class extends Controller {
         itemSelector: this.element,
         range: 12,
         date: { start },
-        domain: { type: "month", gutter: 4 },
-        subDomain: { type: "day", radius: 2, width: 11, height: 11 },
+        domain: { type: "month", gutter: 8 },
+        subDomain: { type: "day", radius: 2, width: 14, height: 14, gutter: 4 },
         data: { source: this.urlValue, type: "json", x: "date", y: "value" },
         scale: {
           color: {
