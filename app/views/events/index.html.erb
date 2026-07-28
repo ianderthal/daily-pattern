@@ -1,4 +1,4 @@
-<h1>Daily Pattern</h1>
+<h1><span style="color: red;">♥</span> Daily Pattern</h1>
 
 <div id="cal-heatmap"
   data-controller="heatmap"
@@ -7,10 +7,11 @@
 
 <%= render "form", event: @event %>
 
-<h2>Recent Entries</h2>
-
-<ul>
-  <% @recent_events.each do |event| %>
-    <li><%= event.date %> <%= event.time.strftime("%H:%M") %> - <%= event.comment %></li>
-  <% end %>
-</ul>
+<details style="margin-top: 3em;">
+  <summary>Recent Entries</summary>
+  <ul>
+    <% @recent_events.each do |event| %>
+      <li><%= event.date %> <%= event.time.strftime("%H:%M") %> - <%= event.comment %></li>
+    <% end %>
+  </ul>
+</details>
