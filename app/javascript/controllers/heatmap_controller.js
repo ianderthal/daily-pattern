@@ -23,7 +23,7 @@ export default class extends Controller {
           color: {
             scheme: "Reds",
             type: "linear",
-            domain: [0, 4],
+            domain: [0, 3],
           },
         },
       },

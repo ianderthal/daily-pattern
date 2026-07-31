@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   def index
     @event = Event.new(date: Date.current, time: Time.current)
-    @recent_events = Event.order(date: :desc, time: :desc).limit(20)
+    @recent_events = Event.order(date: :desc, time: :desc)
   end
 
   def new
@@ -13,7 +13,7 @@ class EventsController < ApplicationController
     if @event.save
       redirect_to root_path, notice: "Event logged."
     else
-      @recent_events = Event.order(date: :desc, time: :desc).limit(20)
+      @recent_events = Event.order(date: :desc, time: :desc)
       render :index, status: :unprocessable_entity
     end
   end
