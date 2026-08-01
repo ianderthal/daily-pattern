@@ -1,9 +1,14 @@
 <h1><span style="color: red;">♥</span> Daily Pattern</h1>
 
-<div id="cal-heatmap"
-  data-controller="heatmap"
-  data-heatmap-url-value="<%= heatmap_data_events_path %>" style="margin: 5em 0">
-</div>
+<% @years.each do |year| %>
+  <h2><%= year %></h2>
+  <div class="cal-heatmap"
+    data-controller="heatmap"
+    data-heatmap-url-value="<%= heatmap_data_events_path %>"
+    data-heatmap-year-value="<%= year %>"
+    style="margin-bottom: 2em;">
+  </div>
+<% end %>
 
 <%= render "form", event: @event %>
 

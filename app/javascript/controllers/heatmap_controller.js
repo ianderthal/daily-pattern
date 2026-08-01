@@ -4,11 +4,10 @@ import Tooltip from "cal-heatmap/plugins/Tooltip"
 import LegendLite from "cal-heatmap/plugins/LegendLite"
 
 export default class extends Controller {
-  static values = { url: String }
+  static values = { url: String, year: Number }
 
   connect() {
-    const today = new Date()
-    const start = new Date(today.getFullYear(), today.getMonth() - 11, 1)
+    const start = new Date(this.yearValue, 0, 1)
 
     this.heatmap = new CalHeatmap()
     this.heatmap.paint(
@@ -23,7 +22,7 @@ export default class extends Controller {
           color: {
             scheme: "Reds",
             type: "linear",
-            domain: [0, 3],
+            domain: [0, 2],
           },
         },
       },

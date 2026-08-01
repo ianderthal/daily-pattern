@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   def index
     @event = Event.new(date: Date.current, time: Time.current)
     @recent_events = Event.order(date: :desc, time: :desc)
+    @years = Event.pluck(:date).map(&:year).uniq.sort.reverse
   end
 
   def new
@@ -14,6 +15,7 @@ class EventsController < ApplicationController
       redirect_to root_path, notice: "Event logged."
     else
       @recent_events = Event.order(date: :desc, time: :desc)
+      @years = Event.pluck(:date).map(&:year).uniq.sort.reverse
       render :index, status: :unprocessable_entity
     end
   end
