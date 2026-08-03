@@ -1,0 +1,12 @@
+services:
+  web:
+    image: ghcr.io/ianderthal/daily-pattern:latest
+    ports:
+      - "3000:3000"
+    environment:
+      RAILS_MASTER_KEY: ${RAILS_MASTER_KEY}
+    volumes:
+      - daily_pattern_storage:/rails/storage
+
+volumes:
+  daily_pattern_storage:
