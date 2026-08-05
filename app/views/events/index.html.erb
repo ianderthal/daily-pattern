@@ -16,7 +16,10 @@
   <summary>Recent Entries - <%= @recent_events.count %> Total</summary>
   <ul>
     <% @recent_events.each do |event| %>
-      <li><%= event.date %> <%= event.time.strftime("%H:%M") %> - <%= event.comment %></li>
+      <li>
+        <%= link_to "View", event %>
+        <%= event.date %> <%= event.time.strftime("%H:%M") %> - <%= event.comment %>
+      </li>
     <% end %>
   </ul>
 </details>

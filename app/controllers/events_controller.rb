@@ -25,6 +25,19 @@ class EventsController < ApplicationController
     render json: counts.sort.map { |date, value| { date: date.to_s, value: value } }
   end
 
+  def show
+    @event = Event.find(params[:id])
+  end
+
+  def destroy
+    event = Event.find(params[:id])
+    if event.destroy
+      redirect_to root_path, notice: "Event deleted."
+    else
+      redirect_to root_path, alert: "Could not delete event."
+    end
+  end
+
   private
 
   def event_params

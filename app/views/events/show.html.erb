@@ -1,0 +1,4 @@
+<p><%= @event.date %> <%= @event.time.strftime("%H:%M") %></p>
+<p><%= @event.comment %></p>
+
+<%= button_to "Delete", @event, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
