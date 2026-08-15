@@ -1,6 +1,7 @@
 services:
   web:
     image: ghcr.io/ianderthal/daily-pattern:latest
+    restart: unless-stopped
     ports:
       - "3000:3000"
     environment:
