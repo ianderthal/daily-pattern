@@ -3,7 +3,7 @@
   <%= f.date_field :date %>
 
   <%= f.label :time %>
-  <%= f.time_field :time %>
+  <%= f.time_field :time, include_seconds: false %>
 
   <%= f.label :comment %>
   <%= f.text_area :comment %>
