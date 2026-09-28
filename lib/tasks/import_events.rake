@@ -11,7 +11,7 @@ def parse_shorthand_time(str)
   hour = 0 if meridian == "a" && hour == 12
   hour += 12 if meridian == "p" && hour != 12
 
-  Time.zone.local(2000, 1, 1, hour, minute)
+  Time.utc(2000, 1, 1, hour, minute)
 end
 
 task import_events: :environment do
